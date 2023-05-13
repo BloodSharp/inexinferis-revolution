@@ -483,6 +483,7 @@ extern "C" {
   }
 
   PVOID pCaller=NULL;
+  /*
   VOID WINAPI hThisSetCltProcTable();
   asm(
     ".text;\r\n"
@@ -496,6 +497,7 @@ extern "C" {
     " push _pCaller;\r\t"
     " ret"
   );
+  */
 }
 
 BOOL WINAPI GetOffsets(HMODULE hOpengl32,PDWORD pdwTlsOffset,PDWORD pdwSetCltProcTable,PDWORD pdwTlsIndex,PBOOL bThisCall){
