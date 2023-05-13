@@ -60,7 +60,7 @@ void SortTextures(void){
 	int i,j;
 	for(i=0;i<gcTextures;i++)
   for(j=i+1;j<gcTextures;j++)
-    if(stricmp(grgszTextureName[i],grgszTextureName[j])>0)
+    if(_stricmp(grgszTextureName[i],grgszTextureName[j])>0)
       SwapTextures(i,j);
 }
 

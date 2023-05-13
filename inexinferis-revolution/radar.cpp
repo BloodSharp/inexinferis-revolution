@@ -33,7 +33,7 @@ bool cRadar::ParseOverview(char* overview_txt){
 		pfile=gEngfuncs.COM_ParseFile(pfile,token);
 		if(!pfile)
 			break;
-		if(!stricmp(token,"global")){
+		if(!_stricmp(token,"global")){
 			pfile=gEngfuncs.COM_ParseFile(pfile,token);
 			if(strcmp(token,"{")){
 				mapLoaded=false;
@@ -43,23 +43,23 @@ bool cRadar::ParseOverview(char* overview_txt){
 			if(!pfile)
 				break;
 			while(strcmp(token,"}")){
-				if(!stricmp(token,"zoom")){
+				if(!_stricmp(token,"zoom")){
 					pfile=gEngfuncs.COM_ParseFile(pfile,token);
 					m_OverviewData.zoom=(float)atof(token);
-				}else if(!stricmp(token,"origin")){
+				}else if(!_stricmp(token,"origin")){
 					pfile=gEngfuncs.COM_ParseFile(pfile,token);
 					m_OverviewData.origin[0]=(float)atof(token);
 					pfile=gEngfuncs.COM_ParseFile(pfile,token);
 					m_OverviewData.origin[1]=(float)atof(token);
 					pfile=gEngfuncs.COM_ParseFile(pfile,token);
 					m_OverviewData.origin[2]=(float)atof(token);
-				}else if(!stricmp(token,"rotated")){
+				}else if(!_stricmp(token,"rotated")){
 					pfile=gEngfuncs.COM_ParseFile(pfile,token);
 					m_OverviewData.rotated=atoi(token);
 				}
 				pfile=gEngfuncs.COM_ParseFile(pfile,token);
 			}
-		}else if(!stricmp(token,"layer")){
+		}else if(!_stricmp(token,"layer")){
 			pfile=gEngfuncs.COM_ParseFile(pfile,token);
 			if(strcmp(token,"{")){
 				mapLoaded=false;
@@ -67,10 +67,10 @@ bool cRadar::ParseOverview(char* overview_txt){
 			}
 			pfile=gEngfuncs.COM_ParseFile(pfile,token);
 			while(strcmp(token,"}")){
-				if(!stricmp(token,"image")){
+				if(!_stricmp(token,"image")){
 					pfile=gEngfuncs.COM_ParseFile(pfile,token);
 					strcpy(m_OverviewData.layersImages[m_OverviewData.layers],token);
-				}else if(!stricmp(token,"height")){
+				}else if(!_stricmp(token,"height")){
 					pfile=gEngfuncs.COM_ParseFile(pfile,token);
 					float height=(float)atof(token);
 					m_OverviewData.layersHeights[m_OverviewData.layers]=height;
