@@ -8,7 +8,7 @@
 typedef struct {
   char szName[256];
   char szSprite[256];
-  HSPRITE hspr;
+  /*HSPRITE*/int hspr;
   wrect_t rc;
   int iRes;
 } spriteinfo_t;
