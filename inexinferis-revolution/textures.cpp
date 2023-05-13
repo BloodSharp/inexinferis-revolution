@@ -10,7 +10,7 @@ char FindTextureType(char *name){
 	right=gcTextures-1;
 	while(left<=right){
 		pivot=(left+right)/2;
-		val=strnicmp(name,grgszTextureName[pivot],CBTEXTURENAMEMAX-1);
+		val=_strnicmp(name,grgszTextureName[pivot],CBTEXTURENAMEMAX-1);
 		if(val==0)
       return grgchTextureType[pivot];
 		else if(val>0)
