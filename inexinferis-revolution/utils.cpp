@@ -818,6 +818,7 @@ DWORD WINAPI GetModuleBaseAndSize(LPCSTR lpModuleName,PDWORD pSize){
 
 DWORD WINAPI GetWinVr() {
   DWORD wversion = (DWORD)-1;
+  /*
   OSVERSIONINFO info;
   ZeroMemory(&info, sizeof(info));
   info.dwOSVersionInfoSize = sizeof(info);
@@ -875,5 +876,6 @@ DWORD WINAPI GetWinVr() {
     break;
     default:break;
   }
+  */
   return wversion;
 }
