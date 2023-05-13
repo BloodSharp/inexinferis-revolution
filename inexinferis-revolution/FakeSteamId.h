@@ -11,7 +11,7 @@ typedef struct dictionary_s{
   char value[256];
 }dictionary_t;
 
-typedef struct PACKED steampack_s{
+typedef struct /*PACKED*/ steampack_s{
   DWORD data;
   DWORD key1;
   DWORD ver;
