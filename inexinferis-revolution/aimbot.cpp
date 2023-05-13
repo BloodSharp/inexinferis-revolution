@@ -10,6 +10,8 @@
 #include "opengl.h"
 #include <time.h>
 
+#include <corecrt_math_defines.h>
+
 cAimbot gAimbot;
 
 void cAimbot::DrawAimSpot() {
