@@ -1,6 +1,6 @@
 #include "textures.h"
 
-static char *gcTexturesFile = "sound/materials.txt";
+static char *gcTexturesFile = (char*)"sound/materials.txt";
 static char grgszTextureName[CTEXTURESMAX][CBTEXTURENAMEMAX];
 static char grgchTextureType[CTEXTURESMAX];
 static int gcTextures = 0;

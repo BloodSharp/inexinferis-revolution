@@ -121,9 +121,9 @@ int HUD_Redraw(float x,int y) {
           gRadar.DrawRadar();
         if(bEngRadar!=cvar.radar) {
           if(cvar.radar)
-            gEngfuncs.pfnClientCmd("hideradar");
+            gEngfuncs.pfnClientCmd((char*)"hideradar");
           else
-            gEngfuncs.pfnClientCmd("drawradar");
+            gEngfuncs.pfnClientCmd((char*)"drawradar");
           bEngRadar=cvar.radar;
         }
         if(!cvar.antiss&&cvar.speedmode&&cvar.autoroute&&(cvar.ardraw==1||(cvar.ardraw==2&&cvar.barrel)))
@@ -851,7 +851,7 @@ void SoundFilter(int index,const char *sample,float *origin) {
       int smcindex=cSoundMark::GetIndex(index,origin,false);
       cSoundMark &mark=gSoundMark[smcindex];
       mark.player=(smcindex>0&&smcindex<MAX_VPLAYERS);
-      mark.weapon="Unknown";
+      mark.weapon=(char*)"Unknown";
       if(bPlats) {
         strcpy(mark.desc,"Vehicle");
         mark.color=4;
