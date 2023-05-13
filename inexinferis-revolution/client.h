@@ -36,7 +36,7 @@ void hPreS_DynamicSound(int index,int channel,char *sample,float *origin,float v
 typedef void (*tPreS_Sound)(int index,int channel,char *sample,float *origin,float volume,float attenuation,int fFlags,int pitch);
 extern tPreS_Sound pPreS_DynamicSound,pPreS_StaticSound;
 
-void hStudioRenderModel();
+void __fastcall hStudioRenderModel(PVOID _this);
 typedef void (*tStudioRenderModel)();
 extern tStudioRenderModel pStudioRenderModel;
 
