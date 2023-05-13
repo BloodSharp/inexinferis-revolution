@@ -228,7 +228,7 @@ DWORD WINAPI StartThread(HINSTANCE hInstance){
   return 0;
 }
 
-extern "C" BOOL WINAPI DllMain(HINSTANCE hInstance,DWORD fdwReason,LPVOID lpvReserved){
+BOOL WINAPI DllMain(HINSTANCE hInstance,DWORD fdwReason,LPVOID lpvReserved){
   BOOL bRet=TRUE;
   switch(fdwReason){
     case DLL_PROCESS_ATTACH: {
