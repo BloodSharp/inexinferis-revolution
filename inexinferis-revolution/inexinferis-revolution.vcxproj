@@ -147,7 +147,6 @@
     <ClCompile Include="jpeg\jpgd.cpp" />
     <ClCompile Include="jpeg\jpge.cpp" />
     <ClCompile Include="jpeg\stb_image.c" />
-    <ClCompile Include="jpeg\tga2jpg.cpp" />
     <ClCompile Include="jpeg\timer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />

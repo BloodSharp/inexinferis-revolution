@@ -99,9 +99,6 @@
     <ClCompile Include="jpeg\stb_image.c">
       <Filter>Archivos de origen\jpeg</Filter>
     </ClCompile>
-    <ClCompile Include="jpeg\tga2jpg.cpp">
-      <Filter>Archivos de origen\jpeg</Filter>
-    </ClCompile>
     <ClCompile Include="jpeg\timer.cpp">
       <Filter>Archivos de origen\jpeg</Filter>
     </ClCompile>
