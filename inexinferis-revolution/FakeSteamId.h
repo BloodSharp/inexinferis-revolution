@@ -13,7 +13,7 @@ typedef struct dictionary_s{
 
 typedef struct /*PACKED*/ steampack_s{
   DWORD data;
-  DWORD key1;
+  LONG key1;
   DWORD ver;
   DWORD unk1;
   DWORD key2;
