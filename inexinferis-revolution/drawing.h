@@ -44,7 +44,7 @@ void DrawCircle(int x,int y,int s,int r,int g,int b,int a);
 void DrawSemiCircle(int x,int y,int s,int ag,int am,int r,int g,int b,int a);
 void DrawVectorDot(float *origin,int r,int g,int b,int a);
 void DrawDot(int x,int y,int r,int g,int b,int a);
-void EchoCmdBlocked(char *cmd);
+void EchoCmdBlocked(const char *cmd);
 
 extern int displayCenterX;
 extern int displayCenterY;

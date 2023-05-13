@@ -449,7 +449,7 @@ void DrawHudString(bool bCenter,int x,int y,int r,int g,int b,const char *fmt,..
 	}
 }
 
-void EchoCmdBlocked(char *cmd){
+void EchoCmdBlocked(const char *cmd){
   CHAR tmp[256];
   sprintf(tmp,"[%s] command has been blocked while you play in a server\n",cmd);
   gEngfuncs.pfnConsolePrint(tmp);
