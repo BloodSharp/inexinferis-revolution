@@ -1,5 +1,4 @@
-/Debug
-/obj
-/Release
-/inexinferis.layout
-/inexinferis.depend
+.vs/
+
+Debug/
+Release/
