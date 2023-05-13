@@ -713,13 +713,13 @@ PBYTE GetNextIstruction(BYTE *src,t_res *res){
   return src;
 }
 
-UINT IstructionSize(PBYTE src){
+UINT WINAPI IstructionSize(PBYTE src){
   if(!src)return 0;
   t_res res={0};
   return (UINT)(GetNextIstruction(src,&res)-src);
 }
 
-PBYTE FindIstruction(PBYTE src,BYTE instruction){
+PBYTE WINAPI FindIstruction(PBYTE src,BYTE instruction){
   if(!src)return NULL;
   t_res res={0};
   while(*src!=instruction)
@@ -727,7 +727,7 @@ PBYTE FindIstruction(PBYTE src,BYTE instruction){
   return src;
 }
 
-ULONG CalcIstructionSize(PBYTE src,DWORD lenNeed,t_res *res){
+ULONG WINAPI CalcIstructionSize(PBYTE src,DWORD lenNeed,t_res *res){
   if(!src)return 0;
   BYTE *cmd=src;
   do{
@@ -752,7 +752,7 @@ BOOL WINAPI DirectoryExist(LPCSTR szPath){
 	return (dwAttrib!=INVALID_FILE_ATTRIBUTES&&(dwAttrib&FILE_ATTRIBUTE_DIRECTORY));
 }
 
-PVOID RedirectFunc(PBYTE Address){
+PVOID WINAPI RedirectFunc(PBYTE Address){
   if(!Address)return NULL;
   t_res res={0};
   INT Len=CalcIstructionSize(Address,5,&res);
@@ -768,7 +768,7 @@ PVOID RedirectFunc(PBYTE Address){
   return buff;
 }
 
-PVOID HookFunc(PBYTE Address,PBYTE newAddress){
+PVOID WINAPI HookFunc(PBYTE Address,PBYTE newAddress){
   if(!Address||!newAddress)return NULL;
   t_res res={0};DWORD dwback;
   INT Len=CalcIstructionSize(Address,5,&res);
@@ -790,7 +790,7 @@ PVOID HookFunc(PBYTE Address,PBYTE newAddress){
   return buff;
 }
 
-BOOL UnHookFunc(PBYTE Address,PBYTE newAddress){
+BOOL WINAPI UnHookFunc(PBYTE Address,PBYTE newAddress){
   if(!Address||!newAddress)return FALSE;
   t_res res={0};DWORD dwback;
   if(*((PBYTE)Address)==0xE9){
