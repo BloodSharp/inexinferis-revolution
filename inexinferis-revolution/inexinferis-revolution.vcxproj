@@ -30,27 +30,27 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -131,6 +131,125 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="aimbot.cpp" />
+    <ClCompile Include="autoroute.cpp" />
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="console.cpp" />
+    <ClCompile Include="cvar.cpp" />
+    <ClCompile Include="drawing.cpp" />
+    <ClCompile Include="engine\interface.cpp" />
+    <ClCompile Include="engine\parsemsg.cpp" />
+    <ClCompile Include="engine\utils.cpp" />
+    <ClCompile Include="FakeSteamId.cpp" />
+    <ClCompile Include="gui.cpp" />
+    <ClCompile Include="interpreter.cpp" />
+    <ClCompile Include="jpeg\jpgd.cpp" />
+    <ClCompile Include="jpeg\jpge.cpp" />
+    <ClCompile Include="jpeg\stb_image.c" />
+    <ClCompile Include="jpeg\tga2jpg.cpp" />
+    <ClCompile Include="jpeg\timer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="nospread.cpp" />
+    <ClCompile Include="offsets.cpp" />
+    <ClCompile Include="opengl.cpp" />
+    <ClCompile Include="players.cpp" />
+    <ClCompile Include="radar.cpp" />
+    <ClCompile Include="screenshots.cpp" />
+    <ClCompile Include="sprites.cpp" />
+    <ClCompile Include="textures.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="weapons.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aimbot.h" />
+    <ClInclude Include="autoroute.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="console.h" />
+    <ClInclude Include="cvar.h" />
+    <ClInclude Include="drawing.h" />
+    <ClInclude Include="engine\activity.h" />
+    <ClInclude Include="engine\anorms.h" />
+    <ClInclude Include="engine\archtypes.h" />
+    <ClInclude Include="engine\beamdef.h" />
+    <ClInclude Include="engine\camera.h" />
+    <ClInclude Include="engine\cdll_dll.h" />
+    <ClInclude Include="engine\cdll_int.h" />
+    <ClInclude Include="engine\cl_dll.h" />
+    <ClInclude Include="engine\cl_entity.h" />
+    <ClInclude Include="engine\com_model.h" />
+    <ClInclude Include="engine\const.h" />
+    <ClInclude Include="engine\con_nprint.h" />
+    <ClInclude Include="engine\crc.h" />
+    <ClInclude Include="engine\custom.h" />
+    <ClInclude Include="engine\customentity.h" />
+    <ClInclude Include="engine\cvardef.h" />
+    <ClInclude Include="engine\demo_api.h" />
+    <ClInclude Include="engine\director_cmds.h" />
+    <ClInclude Include="engine\dlight.h" />
+    <ClInclude Include="engine\dll_state.h" />
+    <ClInclude Include="engine\edict.h" />
+    <ClInclude Include="engine\eiface.h" />
+    <ClInclude Include="engine\engine_launcher_api.h" />
+    <ClInclude Include="engine\entity_state.h" />
+    <ClInclude Include="engine\entity_types.h" />
+    <ClInclude Include="engine\event_api.h" />
+    <ClInclude Include="engine\event_args.h" />
+    <ClInclude Include="engine\event_flags.h" />
+    <ClInclude Include="engine\exefuncs.h" />
+    <ClInclude Include="engine\hltv.h" />
+    <ClInclude Include="engine\interface.h" />
+    <ClInclude Include="engine\in_buttons.h" />
+    <ClInclude Include="engine\ivoicetweak.h" />
+    <ClInclude Include="engine\keydefs.h" />
+    <ClInclude Include="engine\mathlib.h" />
+    <ClInclude Include="engine\netadr.h" />
+    <ClInclude Include="engine\net_api.h" />
+    <ClInclude Include="engine\nowin.h" />
+    <ClInclude Include="engine\parsemsg.h" />
+    <ClInclude Include="engine\particledef.h" />
+    <ClInclude Include="engine\pmtrace.h" />
+    <ClInclude Include="engine\pm_defs.h" />
+    <ClInclude Include="engine\pm_info.h" />
+    <ClInclude Include="engine\pm_materials.h" />
+    <ClInclude Include="engine\progdefs.h" />
+    <ClInclude Include="engine\progs.h" />
+    <ClInclude Include="engine\qfont.h" />
+    <ClInclude Include="engine\ref_params.h" />
+    <ClInclude Include="engine\r_efx.h" />
+    <ClInclude Include="engine\r_studioint.h" />
+    <ClInclude Include="engine\screenfade.h" />
+    <ClInclude Include="engine\Sequence.h" />
+    <ClInclude Include="engine\shake.h" />
+    <ClInclude Include="engine\studio.h" />
+    <ClInclude Include="engine\studiomodelrenderer.h" />
+    <ClInclude Include="engine\studio_event.h" />
+    <ClInclude Include="engine\triangleapi.h" />
+    <ClInclude Include="engine\usercmd.h" />
+    <ClInclude Include="engine\utils.h" />
+    <ClInclude Include="engine\util_vector.h" />
+    <ClInclude Include="engine\weaponinfo.h" />
+    <ClInclude Include="engine\wrect.h" />
+    <ClInclude Include="FakeSteamId.h" />
+    <ClInclude Include="gui.h" />
+    <ClInclude Include="interpreter.h" />
+    <ClInclude Include="jpeg\jpgd.h" />
+    <ClInclude Include="jpeg\jpge.h" />
+    <ClInclude Include="jpeg\timer.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="nospread.h" />
+    <ClInclude Include="offsets.h" />
+    <ClInclude Include="opengl.h" />
+    <ClInclude Include="players.h" />
+    <ClInclude Include="radar.h" />
+    <ClInclude Include="screenshots.h" />
+    <ClInclude Include="sprites.h" />
+    <ClInclude Include="textures.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="weapons.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

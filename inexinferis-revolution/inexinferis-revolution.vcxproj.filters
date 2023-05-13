@@ -13,5 +13,369 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de origen\jpeg">
+      <UniqueIdentifier>{de7744d8-3b84-480c-baa8-085770f11d44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\jpeg">
+      <UniqueIdentifier>{db55ed26-0ddc-411f-a298-64493bd3593b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\engine">
+      <UniqueIdentifier>{539e0724-0b48-4258-a7df-74c34c500bef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aimbot.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="autoroute.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="client.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="cvar.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="drawing.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="FakeSteamId.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="gui.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="interpreter.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="nospread.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="offsets.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="opengl.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="players.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="radar.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="screenshots.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="sprites.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="textures.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="weapons.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg\jpgd.cpp">
+      <Filter>Archivos de origen\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg\jpge.cpp">
+      <Filter>Archivos de origen\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg\stb_image.c">
+      <Filter>Archivos de origen\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg\tga2jpg.cpp">
+      <Filter>Archivos de origen\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg\timer.cpp">
+      <Filter>Archivos de origen\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\interface.cpp">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\parsemsg.cpp">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\utils.cpp">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aimbot.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="autoroute.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="client.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="cvar.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="drawing.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="FakeSteamId.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="gui.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="interpreter.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="nospread.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="opengl.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="players.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="radar.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="screenshots.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="sprites.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="textures.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="weapons.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg\jpgd.h">
+      <Filter>Archivos de encabezado\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg\jpge.h">
+      <Filter>Archivos de encabezado\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg\timer.h">
+      <Filter>Archivos de encabezado\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\activity.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\anorms.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\archtypes.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\beamdef.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\camera.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\cdll_dll.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\cdll_int.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\cl_dll.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\cl_entity.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\com_model.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\con_nprint.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\const.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\crc.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\custom.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\customentity.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\cvardef.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\demo_api.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\director_cmds.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\dlight.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\dll_state.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\edict.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\eiface.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\engine_launcher_api.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\entity_state.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\entity_types.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\event_api.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\event_args.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\event_flags.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\exefuncs.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\hltv.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\in_buttons.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\interface.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\ivoicetweak.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\keydefs.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\mathlib.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\net_api.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\netadr.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\nowin.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\parsemsg.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\particledef.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\pm_defs.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\pm_info.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\pm_materials.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\pmtrace.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\progdefs.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\progs.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\qfont.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\r_efx.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\r_studioint.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\ref_params.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\screenfade.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Sequence.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\shake.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\studio.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\studio_event.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\studiomodelrenderer.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\triangleapi.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\usercmd.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\util_vector.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\utils.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\weaponinfo.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\wrect.h">
+      <Filter>Archivos de encabezado\engine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
