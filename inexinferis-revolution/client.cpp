@@ -1006,9 +1006,7 @@ int	hStudioDrawModel(int flags) {
   return studioret;
 }
 
-void hStudioRenderModel() {
-  PVOID _this;//save this pointer!
-  asm("mov %%ecx,%0;\r\t":"=m"(_this));
+void __fastcall hStudioRenderModel(PVOID _this) {
   if(!bInvalidVideoMode) {
     cPlayer *player=gPlayers.GetCurrentEntity();
     if(cvar.active&&!cvar.takingss&&(!cvar.antiss||!gMe.IsFreeSpectator())&&
@@ -1028,8 +1026,11 @@ void hStudioRenderModel() {
         oglChamsColor[1]=fmin(color.fg+color.fr,1.0);
         oglChamsColor[2]=fmin(color.fb+color.fg,1.0);
 
-        asm("mov %0,%%ecx;\r\t"::"m"(_this));
-        gRenderer.StudioRenderFinal();
+        __asm
+        {
+            mov ecx, _this;
+            call gRenderer.StudioRenderFinal;
+        }
 
         // render visible part
         if(pglEnable)
@@ -1039,8 +1040,11 @@ void hStudioRenderModel() {
         oglChamsColor[1]=color.fg;
         oglChamsColor[2]=color.fb;
 
-        asm("mov %0,%%ecx;\r\t"::"m"(_this));
-        gRenderer.StudioRenderFinal();
+        __asm
+        {
+            mov ecx, _this;
+            call gRenderer.StudioRenderFinal;
+        }
 
         if(pglEnable)
           pglEnable(GL_TEXTURE_2D);
@@ -1059,8 +1063,11 @@ void hStudioRenderModel() {
         if(pglDepthFunc)
           pglDepthFunc(GL_GREATER);
 
-        asm("mov %0,%%ecx;\r\t"::"m"(_this));
-        gRenderer.StudioRenderFinal();
+        __asm
+        {
+            mov ecx, _this;
+            call gRenderer.StudioRenderFinal;
+        }
 
         gEngStudio.SetChromeOrigin();
         gEngStudio.SetForceFaceFlags(STUDIO_NF_CHROME);
@@ -1074,14 +1081,20 @@ void hStudioRenderModel() {
         if(pglDepthFunc)
           pglDepthFunc(GL_LESS);
 
-        asm("mov %0,%%ecx;\r\t"::"m"(_this));
-        gRenderer.StudioRenderFinal();
+        __asm
+        {
+            mov ecx, _this;
+            call gRenderer.StudioRenderFinal;
+        }
       }
       return;
     }
   }
-  asm("mov %0,%%ecx;\r\t"::"m"(_this));
-  pStudioRenderModel();
+  __asm
+  {
+      mov ecx, _this;
+      call pStudioRenderModel;
+  }
 }
 
 //==================================================================================
