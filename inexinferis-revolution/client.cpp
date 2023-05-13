@@ -1170,13 +1170,13 @@ static int TeamInfo(const char *pszName, int iSize, void *pbuf) {
   static const char * STR_CT="CT";
   static const char * STR_UNASSIGNED="UNASSIGNED";
   static const char * STR_SPECTATOR="SPECTATOR";
-  if(!stricmp(teamtext,STR_TERROR))
+  if(!_stricmp(teamtext,STR_TERROR))
     team=1;
-  else if(!stricmp(teamtext,STR_CT))
+  else if(!_stricmp(teamtext,STR_CT))
     team=2;
-  else if(!stricmp(teamtext,STR_UNASSIGNED))
+  else if(!_stricmp(teamtext,STR_UNASSIGNED))
     team=0;
-  else if(!stricmp(teamtext,STR_SPECTATOR))
+  else if(!_stricmp(teamtext,STR_SPECTATOR))
     team=0;
   gPlayers[px]->team=team;
   if(px==gMe.index)gMe.team=team;
@@ -1478,7 +1478,7 @@ void killcmd() {
 pfnEvent HookEvent(const char *name,pfnEvent pfn) {
   if(pEventList) {
     for(eventlist_t *pev=*pEventList; pev!=NULL; pev=pev->next) {
-      if(pev->name&&pev->pfn&&!stricmp(name,pev->name)) {
+      if(pev->name&&pev->pfn&&!_stricmp(name,pev->name)) {
         pfnEvent ret=pev->pfn;
         pev->pfn=pfn;
         return ret;
@@ -1491,7 +1491,7 @@ pfnEvent HookEvent(const char *name,pfnEvent pfn) {
 pfnUserMsgHook HookUserMsg(const char *name,pfnUserMsgHook pfn) {
   if(pUserMsgList) {
     for(usermsglist_t *umsg=*pUserMsgList; umsg!=NULL; umsg=umsg->next) {
-      if(umsg->name&&umsg->pfn&&!stricmp(name,umsg->name)) {
+      if(umsg->name&&umsg->pfn&&!_stricmp(name,umsg->name)) {
         pfnUserMsgHook ret=umsg->pfn;
         umsg->pfn=pfn;
         return ret;
@@ -1504,7 +1504,7 @@ pfnUserMsgHook HookUserMsg(const char *name,pfnUserMsgHook pfn) {
 pfnSrvCmd HookSrvCmd(const char *name,pfnSrvCmd pfn) {
   if(pSrvCmdList) {
     for(srvcmdlist_t *cmd=*pSrvCmdList; cmd!=NULL; cmd=cmd->next) {
-      if(cmd->name&&cmd->pfn&&!stricmp(name,cmd->name)) {
+      if(cmd->name&&cmd->pfn&&!_stricmp(name,cmd->name)) {
         pfnSrvCmd ret=cmd->pfn;
         cmd->pfn=pfn;
         return ret;
