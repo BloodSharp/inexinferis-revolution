@@ -53,7 +53,7 @@ float oglChamsColor[3];
 GLuint textureID=0;
 
 PBYTE dwFSBase=0,dwFSBase2=0;tSetCltProcTable pSetCltProcTable=NULL;
-VOID WINAPI DoTIBHook(PBYTE dwFSBase,PBYTE dwFSBase2);
+//VOID WINAPI DoTIBHook(PBYTE dwFSBase,PBYTE dwFSBase2);
 
 BOOL WINAPI CheckFuncs(){
   static BOOL bCheckOK=FALSE;
@@ -158,7 +158,7 @@ void WINAPI hglBegin(GLenum mode){
   }
   pglBegin(mode);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 void WINAPI hglClear(GLbitfield mask){
@@ -178,7 +178,7 @@ void WINAPI hglClear(GLbitfield mask){
 	}
 	pglClear(mask);
 	//Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 void WINAPI hglVertex3fv(const GLfloat *v){
@@ -187,7 +187,7 @@ void WINAPI hglVertex3fv(const GLfloat *v){
     return;
   pglVertex3fv(v);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 /*void WINAPI hglVertex2f(GLfloat x,GLfloat y){
@@ -202,14 +202,14 @@ void WINAPI hglEnable(GLenum mode){
   if(mode==GL_TEXTURE_2D)bTex=true;
   pglEnable(mode);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 void WINAPI hglDisable(GLenum mode){
   if(mode==GL_TEXTURE_2D)bTex=false;
   pglDisable(mode);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 //Cam zoom
@@ -223,7 +223,7 @@ void WINAPI hglFrustum(GLdouble left,GLdouble right,GLdouble bottom,GLdouble top
 	}
   pglFrustum(left,right,bottom,top,zNear,zFar);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 //1.5 tint func!
@@ -253,7 +253,7 @@ void WINAPI hglBlendFunc(GLenum sfactor,GLenum dfactor){
 	else
     pglBlendFunc(sfactor,dfactor);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 void WINAPI hglColor4f(GLfloat red,GLfloat green,GLfloat blue,GLfloat alpha){
@@ -265,7 +265,7 @@ void WINAPI hglColor4f(GLfloat red,GLfloat green,GLfloat blue,GLfloat alpha){
   }
   pglColor4f(red,green,blue,alpha);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 //SmallView
@@ -279,7 +279,7 @@ void WINAPI hglViewport(GLint x,GLint y,GLsizei width,GLsizei height){
 		(bSmall?150:height)
 	);
 	//Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 //UCP/SXE Screenshot
@@ -289,7 +289,7 @@ void WINAPI hglReadPixels(GLint x,GLint	y,GLsizei	width,GLsizei	height,GLenum fo
   else
     pglReadPixels(x,y,width,height,format,type,data);
   //Update TIB Hook
-  DoTIBHook(dwFSBase,dwFSBase2);
+  //DoTIBHook(dwFSBase,dwFSBase2);
 }
 
 void WINAPI glCreateTextureBuffer(GLint width,GLint height,GLvoid* data){
@@ -337,6 +337,7 @@ void WINAPI glDrawTexture(GLint x,GLint y,GLint width,GLint height){
  TIB HOOKING V3.0
 \*******************************************************************************/
 
+/*
 //do TIB hooking
 VOID WINAPI DoTIBHook(PBYTE dwFSBase,PBYTE dwFSBase2){
   //Update redirect call
@@ -408,10 +409,10 @@ VOID WINAPI DoTIBHook(PBYTE dwFSBase,PBYTE dwFSBase2){
     pglDisable=(tglDisable)*(PDWORD)(dwFSBase+0x994);
     *(PDWORD)(dwFSBase+0x994)=(DWORD)hglDisable;
   }
-  /*if(*(PDWORD)(dwFSBase+0x92C)!=(DWORD)hglVertex2f){
-    pglVertex2f=(tglVertex2f)*(PDWORD)(dwFSBase+0x92C);
-    *(PDWORD)(dwFSBase+0x92C)=(DWORD)hglVertex2f;
-  }*/
+  //if(*(PDWORD)(dwFSBase+0x92C)!=(DWORD)hglVertex2f){
+  //  pglVertex2f=(tglVertex2f)*(PDWORD)(dwFSBase+0x92C);
+  //  *(PDWORD)(dwFSBase+0x92C)=(DWORD)hglVertex2f;
+  //}
   if(*(PDWORD)(dwFSBase+0x950)!=(DWORD)hglVertex3fv){
     pglVertex3fv=(tglVertex3fv)*(PDWORD)(dwFSBase+0x950);
     *(PDWORD)(dwFSBase+0x950)=(DWORD)hglVertex3fv;
@@ -483,7 +484,6 @@ extern "C" {
   }
 
   PVOID pCaller=NULL;
-  /*
   VOID WINAPI hThisSetCltProcTable();
   asm(
     ".text;\r\n"
@@ -497,7 +497,6 @@ extern "C" {
     " push _pCaller;\r\t"
     " ret"
   );
-  */
 }
 
 BOOL WINAPI GetOffsets(HMODULE hOpengl32,PDWORD pdwTlsOffset,PDWORD pdwSetCltProcTable,PDWORD pdwTlsIndex,PBOOL bThisCall){
@@ -581,68 +580,142 @@ LPVOID WINAPI GetValueFromTeb(PTEB Teb,DWORD Index){
     return NULL;
   return Teb->TlsExpansionSlots[Index-TLS_MINIMUM_AVAILABLE];
 }
+*/
 
-BOOL WINAPI HookOpenGl(){
-  CONTEXT Context;LDT_ENTRY SelEntry;
-  Context.ContextFlags=CONTEXT_FULL|CONTEXT_DEBUG_REGISTERS;
-  DWORD pdwTlsOffset=0,pdwSetCltProcTable=0,pdwTlsIndex=0,dwTlsOffset=0,dwTlsIndex=0;BOOL bThisCall=FALSE;
-
-  if((hOpengl32=GetModuleHandle("opengl32.dll"))==NULL){
-    return FALSE;
-  }
-
-  if(!GetOffsets(hOpengl32,&pdwTlsOffset,&pdwSetCltProcTable,&pdwTlsIndex,&bThisCall))
-    return FALSE;
-
-  DWORD dwThreadId,dwProcessId;
-  HWND hdHalfLife=FindWindow(NULL,"Counter-Strike");
-  if(hdHalfLife){
-    dwThreadId=GetWindowThreadProcessId(hdHalfLife,&dwProcessId);
-  }
-
-  HANDLE hThread=OpenThread(THREAD_GET_CONTEXT|THREAD_SUSPEND_RESUME|THREAD_QUERY_INFORMATION,FALSE,dwThreadId);
-  if(!hThread){
-    return FALSE;
-  }
-
-  if(!GetThreadContext(hThread,&Context)){
-    CloseHandle(hThread);
-    return FALSE;
-  }
-
-  GetThreadSelectorEntry(hThread,Context.SegFs,&SelEntry);
-  dwFSBase=(PBYTE)((SelEntry.HighWord.Bits.BaseHi<<24)|
-    (SelEntry.HighWord.Bits.BaseMid<<16)|SelEntry.BaseLow);
-  if(!dwFSBase||IsBadReadPtr((PVOID)dwFSBase,4)){
-    return FALSE;
-  }
-
-  dwTlsOffset=((DWORD)hOpengl32)+pdwTlsOffset;
-  if(IsBadReadPtr((PVOID)dwTlsOffset,4)){
-    return FALSE;
-  }
-
-  if(pdwTlsIndex){
-    dwTlsIndex=((DWORD)hOpengl32)+pdwTlsIndex;
-    if(IsBadReadPtr((PVOID)dwTlsIndex,4)){
-      return FALSE;
+BOOL WINAPI HookOpenGl() {
+    if ((hOpengl32 = GetModuleHandle("opengl32.dll")) == NULL) {
+        return FALSE;
     }
-  }
 
-  do{//multiple redirect...
-    Sleep(100);
-    if(dwTlsIndex&&(*(PDWORD)dwTlsIndex)>TLS_MINIMUM_AVAILABLE)
-      dwFSBase2=(PBYTE)GetValueFromTeb((PTEB)dwFSBase,*((PDWORD)dwTlsIndex));
-    else
-      dwFSBase2=(PBYTE)(*(PDWORD)((DWORD)dwFSBase+(*(PDWORD)dwTlsOffset)));
-  }while(dwFSBase2==NULL);
+    // OpenGL pointers!!!
+    //
+    //if (dwFSBase2) {
+    pglEnd = (decltype(pglEnd))GetProcAddress(hOpengl32, "glEnd");
+    pglColor3f = (decltype(pglColor3f))GetProcAddress(hOpengl32, "glColor3f");
+    pglVertex3f = (decltype(pglVertex3f))GetProcAddress(hOpengl32, "glVertex3f");
+    pglTexCoord2f = (decltype(pglTexCoord2f))GetProcAddress(hOpengl32, "glTexCoord2f");
+    pglBindTexture = (decltype(pglBindTexture))GetProcAddress(hOpengl32, "glBindTexture");
+    //}
+    //if (dwFSBase2) {
+    pglGetFloatv = (decltype(pglGetFloatv))GetProcAddress(hOpengl32, "glGetFloatv");
+    pglGetIntegerv = (decltype(pglGetIntegerv))GetProcAddress(hOpengl32, "glGetIntegerv");
+    pglClearColor = (decltype(pglClearColor))GetProcAddress(hOpengl32, "glClearColor");
+    pglTexEnvi = (decltype(pglTexEnvi))GetProcAddress(hOpengl32, "glTexEnvi");
+    pglDepthRange = (decltype(pglDepthRange))GetProcAddress(hOpengl32, "glDepthRange");
+    pglDepthFunc = (decltype(pglDepthFunc))GetProcAddress(hOpengl32, "glDepthFunc");
+    pglReadBuffer = (decltype(pglReadBuffer))GetProcAddress(hOpengl32, "glReadBuffer");
+    pglLineWidth = (decltype(pglLineWidth))GetProcAddress(hOpengl32, "glLineWidth");
+    pglPolygonMode = (decltype(pglPolygonMode))GetProcAddress(hOpengl32, "glPolygonMode");
+    pglGenTextures = (decltype(pglGenTextures))GetProcAddress(hOpengl32, "glGenTextures");
+    pglTexImage2D = (decltype(pglTexImage2D))GetProcAddress(hOpengl32, "glTexImage2D");
+    pglTexParameteri = (decltype(pglTexParameteri))GetProcAddress(hOpengl32, "glTexParameteri");
+    //}
 
-  //do Hook
-  SuspendThread(hThread);
-  DoTIBHook(dwFSBase,dwFSBase2);
+    //New OpenGL functions...
+    pwglGetProcAddress = (twglGetProcAddress)GetProcAddress(hOpengl32, "wglGetProcAddress");
+    
+    if (pwglGetProcAddress) {
+        if (!pglGenBuffers) {
+            pglGenBuffers = (tglGenBuffers)pwglGetProcAddress("glGenBuffers");
+        }
+        if (!pglBufferData) {
+            pglBufferData = (tglBufferData)pwglGetProcAddress("glBufferData");
+        }
+        if (!pglBindBuffer) {
+            pglBindBuffer = (tglBindBuffer)pwglGetProcAddress("glBindBuffer");
+        }
+        if (!pglMapBuffer) {
+            pglMapBuffer = (tglMapBuffer)pwglGetProcAddress("glMapBuffer");
+        }
+        if (!pglUnmapBuffer) {
+            pglUnmapBuffer = (tglUnmapBuffer)pwglGetProcAddress("glUnmapBuffer");
+        }
+    }
 
-  ResumeThread(hThread);
-  CloseHandle(hThread);
+    // OpenGL hooks!!!
+    // 
+    //if (dwFSBase) {
+    pglBegin = (decltype(pglBegin))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glBegin"), (PBYTE)&hglBegin);
+    pglEnable = (decltype(pglEnable))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glEnable"), (PBYTE)&hglEnable);
+    pglDisable = (decltype(pglDisable))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glDisable"), (PBYTE)&hglDisable);
+    //if(*(PDWORD)(dwFSBase+0x92C)!=(DWORD)hglVertex2f){
+    //  pglVertex2f=(tglVertex2f)*(PDWORD)(dwFSBase+0x92C);
+    //  *(PDWORD)(dwFSBase+0x92C)=(DWORD)hglVertex2f;
+    //}
+    pglVertex3fv = (decltype(pglVertex3fv))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glVertex3fv"), (PBYTE)&hglVertex3fv);
+    pglColor4f = (decltype(pglColor4f))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glColor4f"), (PBYTE)&hglColor4f);
+    //}
 
-  return TRUE;
+    //if (dwFSBase2) {
+    pglFrustum = (decltype(pglFrustum))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glFrustum"), (PBYTE)&hglFrustum);
+    pglClear = (decltype(pglClear))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glClear"), (PBYTE)&hglClear);
+    pglBlendFunc = (decltype(pglBlendFunc))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glBlendFunc"), (PBYTE)&hglBlendFunc);
+    pglReadPixels = (decltype(pglReadPixels))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glReadPixels"), (PBYTE)&hglReadPixels);
+    pglViewport = (decltype(pglViewport))HookFunc((PBYTE)GetProcAddress(hOpengl32, "glViewport"), (PBYTE)&hglViewport);
+    //}
+
+    /*
+    CONTEXT Context; LDT_ENTRY SelEntry;
+    Context.ContextFlags = CONTEXT_FULL | CONTEXT_DEBUG_REGISTERS;
+    DWORD pdwTlsOffset = 0, pdwSetCltProcTable = 0, pdwTlsIndex = 0, dwTlsOffset = 0, dwTlsIndex = 0; BOOL bThisCall = FALSE;
+
+    if ((hOpengl32 = GetModuleHandle("opengl32.dll")) == NULL) {
+        return FALSE;
+    }
+
+    if (!GetOffsets(hOpengl32, &pdwTlsOffset, &pdwSetCltProcTable, &pdwTlsIndex, &bThisCall))
+        return FALSE;
+
+    DWORD dwThreadId, dwProcessId;
+    HWND hdHalfLife = FindWindow(NULL, "Counter-Strike");
+    if (hdHalfLife) {
+        dwThreadId = GetWindowThreadProcessId(hdHalfLife, &dwProcessId);
+    }
+
+    HANDLE hThread = OpenThread(THREAD_GET_CONTEXT | THREAD_SUSPEND_RESUME | THREAD_QUERY_INFORMATION, FALSE, dwThreadId);
+    if (!hThread) {
+        return FALSE;
+    }
+
+    if (!GetThreadContext(hThread, &Context)) {
+        CloseHandle(hThread);
+        return FALSE;
+    }
+
+    GetThreadSelectorEntry(hThread, Context.SegFs, &SelEntry);
+    dwFSBase = (PBYTE)((SelEntry.HighWord.Bits.BaseHi << 24) |
+        (SelEntry.HighWord.Bits.BaseMid << 16) | SelEntry.BaseLow);
+    if (!dwFSBase || IsBadReadPtr((PVOID)dwFSBase, 4)) {
+        return FALSE;
+    }
+
+    dwTlsOffset = ((DWORD)hOpengl32) + pdwTlsOffset;
+    if (IsBadReadPtr((PVOID)dwTlsOffset, 4)) {
+        return FALSE;
+    }
+
+    if (pdwTlsIndex) {
+        dwTlsIndex = ((DWORD)hOpengl32) + pdwTlsIndex;
+        if (IsBadReadPtr((PVOID)dwTlsIndex, 4)) {
+            return FALSE;
+        }
+    }
+
+    do {//multiple redirect...
+        Sleep(100);
+        if (dwTlsIndex && (*(PDWORD)dwTlsIndex) > TLS_MINIMUM_AVAILABLE)
+            dwFSBase2 = (PBYTE)GetValueFromTeb((PTEB)dwFSBase, *((PDWORD)dwTlsIndex));
+        else
+            dwFSBase2 = (PBYTE)(*(PDWORD)((DWORD)dwFSBase + (*(PDWORD)dwTlsOffset)));
+    } while (dwFSBase2 == NULL);
+
+    //do Hook
+    SuspendThread(hThread);
+    DoTIBHook(dwFSBase, dwFSBase2);
+
+    ResumeThread(hThread);
+    CloseHandle(hThread);
+    */
+
+    return TRUE;
 }
