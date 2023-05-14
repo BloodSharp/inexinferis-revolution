@@ -16,6 +16,7 @@
 #include "menu.h"
 #include "gui.h"
 #include "FakeSteamId.h"
+#include "xorstr.h"
 
 pfnUserMsgHook pResetHUD=NULL,pTeamInfo=NULL,pCurWeapon=NULL,pScoreAttrib=NULL,pSetFOV=NULL,
                pHealth=NULL,pBattery=NULL,pScoreInfo=NULL,pDeathMsg=NULL,pSayText=NULL,pDamage=NULL,//pTextMsg=NULL,
@@ -91,7 +92,7 @@ int HUD_Redraw(float x,int y) {
     if(!cvar.takingss&&(!cvar.antiss||!gMe.IsFreeSpectator())) { //cvar.antiss!=2|| <- bug with sprites!
       if(display<2000) { //
         DrawHudString(true,displayCenterX,screeninfo.iHeight/6,235,138,display%255,
-          "Inexinferis Revolution 2017 - http://www.inexinferis.com");
+            /*Inexinferis Revolution 2023 - BloodSharp's fork*/XorStr<0xB5, 48, 0x13371337>("\xFC\xD8\xD2\xC0\xD0\xD4\xDD\xD9\xCF\xD7\xCC\xE0\x93\xA7\xB5\xAB\xA9\xB3\xB3\xA1\xA6\xA4\xEB\xFE\xFD\xFC\xFC\xF0\xFC\xF2\x91\xB8\xBA\xB9\xB3\x8B\xB1\xBB\xA9\xAC\xFA\xAD\xFF\x86\x8E\x90\x88" + 0x13371337).s);
         display++;
       }
       if(!cvar.speedmode||(cvar.speedmode&&!gMe.inspeed)) {

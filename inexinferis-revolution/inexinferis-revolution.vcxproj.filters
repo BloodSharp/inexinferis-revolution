@@ -374,5 +374,8 @@
     <ClInclude Include="engine\wrect.h">
       <Filter>Archivos de encabezado\engine</Filter>
     </ClInclude>
+    <ClInclude Include="xorstr.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
