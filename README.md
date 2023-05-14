@@ -1,3 +1,7 @@
-# Source Code for the last Inexinferis-Revolution Cheat (an extract in fact)
+# Inexinferis-Revolution (BloodSharp's fork)
 
-This source is deprecated, it's only for reference for other developers who want to play with it ;)
+This source is updated and modified to support Visual Studio C++ 2022 for nostalgia. Originally developed by Karman.
+
+[https://www.youtube.com/watch?v=VUwNFAqIGfg](Video)
+
+B#
